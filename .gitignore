@@ -1,2 +1,8 @@
 node_modules
 .DS_Store
+.babelrc
+.gulprc
+docker-compose.yml
+gulpfile.js
+Makefile
+webpack.config.js
