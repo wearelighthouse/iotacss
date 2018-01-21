@@ -1,15 +1,14 @@
 {
-  "name": "iotacss",
+  "name": "wearelighthouse-iotacss",
   "version": "1.5.0",
-  "description": "All iotaCSS's modules in one place",
-  "repository": "iotacss/iotacss",
+  "description": "Our own take on IotaCSS",
+  "repository": "wearelighthouse/iotacss",
   "keywords": [
     "iotacss",
     "css",
-    "sass",
+    "scss",
     "bem",
-    "oocss"
   ],
   "license": "Apache-2.0",
-  "author": "Dimitris Psaropoulos <info@harby.me>"
+  "author": "Russell Bishop <russell@wearelighthouse.com>"
 }
