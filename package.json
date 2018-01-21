@@ -1,14 +1,27 @@
 {
-  "name": "wearelighthouse-iotacss",
-  "version": "1.5.0",
-  "description": "Our own take on IotaCSS",
-  "repository": "wearelighthouse/iotacss",
-  "keywords": [
-    "iotacss",
-    "css",
-    "scss",
-    "bem",
-  ],
-  "license": "Apache-2.0",
-  "author": "Russell Bishop <russell@wearelighthouse.com>"
+  "private": true,
+  "scripts": {
+    "build": "gulp",
+    "prod": "gulp --production",
+    "watch": "gulp watch"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-transform-object-rest-spread": "^6.19.0",
+    "babel-preset-es2015": "^6.18.0",
+    "css-loader": "^0.26.0",
+    "gulp": "^3.9.1",
+    "iotacss-components-button": "^1.0.3",
+    "iotacss-utils-align-items": "^1.0.0",
+    "iotacss-utils-flex-direction": "^1.0.0",
+    "iotacss-utils-justify-content": "^1.0.0",
+    "laravel-elixir": "^6.0.0-14",
+    "laravel-elixir-browsersync-official": "^1.0.0",
+    "laravel-elixir-svg-symbols": "^1.0.1",
+    "laravel-elixir-webpack-official": "^1.0.9",
+    "style-loader": "^0.13.1"
+  }
 }
