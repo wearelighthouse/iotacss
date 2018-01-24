@@ -1,0 +1,64 @@
+// vspace
+// hspace
+
+$combinatorUtilitiesSettings: (
+  ( combinator: '> * + *',
+    properties: (
+      ( property: 'margin-top',
+        propertyClass: 'vspace-',
+
+        units: (
+          (
+            unit: 'rem',
+            unitClass: 'r',
+
+            values: (
+              (
+                value: 1,
+              ),
+              (
+                value: 2,
+                responsive:
+                (
+                  'smalltomed', 'medtomax',
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      ( property: 'margin-left',
+        propertyClass: 'hspace-',
+
+        units: (
+          (
+            unit: 'rem',
+            unitClass: 'r',
+
+            values: (
+              (
+                value: 1,
+              ),
+              (
+                value: 2,
+              ),
+            ),
+          ),
+          (
+            unit: 'rem',
+            unitClass: 'gutter',
+
+            values: (
+              (
+                value: 1,
+              ),
+              (
+                value: 2,
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
+  ),
+);

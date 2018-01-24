@@ -1,0 +1,153 @@
+// position, visibility, overflow, display
+// flex-direction, align-content, align-items, align-self, justify-content,
+// appearance, float,
+// backgound-color, background-position, background-attachment, background-repeat, background-size, background-blend-mode,
+// font-family, font-weight [bold/light...]
+// color,
+// list-style*, text-align, text-decoration, text-overflow, text-transform, white-space,
+// will-change, cursor, pointer-events
+
+$wordUtilitiesSettings: (
+
+  (
+    property: 'position',
+    propertyClass: 'pos-',
+
+    values: (
+      (
+        value: 'absolute',
+        valueClass: 'abs',
+        responsive:
+          (
+            'smalltomed', 'medtomax',
+          ),
+      ),
+      (
+        value: 'relative',
+        valueClass: 'rel',
+        responsive:
+          (
+            'smalltomed', 'medtomax',
+          ),
+      ),
+    ),
+  ),
+
+  (
+    property: 'justify-content',
+    propertyClass: 'jc-',
+
+    values: (
+      (
+        value: 'space-between',
+        valueClass: 'between',
+        responsive:
+          (
+            'smalltomed','medtomax',
+          ),
+      ),
+    ),
+  ),
+
+  (
+    property: 'overflow',
+    propertyClass: 'ov-',
+
+    values: (
+      (
+        value: 'hidden',
+      ),
+      (
+        value: 'scroll',
+      ),
+    ),
+  ),
+
+  (
+    property: 'border',
+    propertyClass: 'border-',
+
+    values: (
+      (
+        value: '1px solid' $colour-white,
+        valueClass: '1white',
+      ),
+    ),
+  ),
+
+  (
+    property: 'color',
+    propertyClass: 'color-',
+
+    values: (
+      (
+        value: $colour-white,
+        valueClass: 'white',
+        pseudo:
+          (
+            ('hover', 'focus'),
+            'active',
+          ),
+      ),
+      (
+        value: $colour-black,
+        valueClass: 'black',
+      ),
+    ),
+  ),
+
+  (
+    property: 'background-color',
+    propertyClass: 'bgcolor-',
+
+    values: (
+      (
+        value: $colour-white,
+        valueClass: 'white',
+      ),
+      (
+        value: $colour-black,
+        valueClass: 'black',
+        pseudo:
+          (
+            ('hover', 'focus'),
+            'active',
+          ),
+      ),
+    ),
+  ),
+
+  (
+    property: 'display',
+    propertyClass: '',
+
+    values: (
+      (
+        value: 'none',
+      ),
+      (
+        value: 'flex',
+      ),
+      (
+        value: 'block',
+        responsive:
+          (
+            'smalltomed', 'medtomax',
+          ),
+      ),
+    ),
+  ),
+
+  (
+    property: 'font-family',
+    propertyClass: 'family-',
+
+    values: (
+      (
+        value: 'Roboto, "Helvetica Neue", sans-serif',
+        valueClass: 'roboto',
+      ),
+    ),
+  ),
+);
+

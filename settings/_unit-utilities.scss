@@ -1,0 +1,121 @@
+/*
+
+// top, right, bottom, left
+// width, min-width, max-width, // height, min-height, max-height,
+// margin..., padding...,
+
+*/
+
+@function baseline($value) {
+  @return $value * 1.275rem;
+}
+
+$unitUtilitiesSettings: (
+
+  ( property: 'top',
+    propertyClass: 'top-',
+
+    units: (
+      (
+        unit: '',
+
+        values: (
+          (
+            value: 0,
+          ),
+        ),
+      ),
+      (
+        unit: 'baseline',
+        unitClass: 'base',
+
+        values: (
+          (
+            value: baseline(1),
+            valueClass: '1',
+          ),
+        ),
+      ),
+      (
+        unit: 'calcRows',
+        unitClass: 'row',
+
+        values: (
+          (
+            value: calc(2 * var(--Row)),
+            valueClass: '2',
+          ),
+        ),
+      ),
+      (
+        unit: '%',
+        unitClass: 'pc',
+
+        values: (
+          (
+            value: 50,
+          ),
+          (
+            value: 100,
+            global: false,
+
+            responsive:
+            (
+              'smalltomed', 'medtomax',
+            ),
+          ),
+        ),
+      ),
+    ),
+  ),
+  ( property: 'margin-top',
+    propertyClass: 'mt-',
+
+    units: (
+      (
+        unit: 'rem',
+
+        values: (
+          (
+            value: 2,
+          ),
+        ),
+      ),
+    ),
+
+    keywords: (
+      (
+        keyword: 'auto',
+
+        responsive:
+          (
+            'smalltomed', 'medtomax',
+          ),
+      ),
+    ),
+  ),
+  ( property: ('margin-right', 'margin-left'),
+    propertyClass: 'mh-',
+
+    keywords: (
+      (
+        keyword: 'auto',
+      ),
+    ),
+  ),
+  ( property: ('padding-top', 'padding-bottom'),
+    propertyClass: 'pv-',
+
+    units: (
+      (
+        unit: 'rem',
+
+        values: (
+          (
+            value: 2,
+          ),
+        ),
+      ),
+    ),
+  ),
+);

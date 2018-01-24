@@ -1,0 +1,28 @@
+/**
+ * Default global breakpoints map. These are the
+ * default breakpoints map that will be shared across
+ * all iotaCSS modules. You can change it also locally
+ * to each module.
+ *
+ * Type: Map
+ */
+
+$iota-global-breakpoints-value-small: 500px;
+$iota-global-breakpoints-value-med: 710px;
+$iota-global-breakpoints-value-max: 1200px;
+
+$iota-global-breakpoints: (
+
+  uptomed:
+  'screen and (max-width: '$iota-global-breakpoints-value-med - 1')',
+
+  smalltomed:
+  'screen and (min-width: '$iota-global-breakpoints-value-small') and (max-width: '$iota-global-breakpoints-value-med - 1')',
+
+  medtomax:
+  'screen and (min-width: '$iota-global-breakpoints-value-med') and (max-width: '$iota-global-breakpoints-value-max - 1')',
+
+  frommax:
+  'screen and (min-width: '$iota-global-breakpoints-value-med')',
+
+);

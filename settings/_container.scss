@@ -1,0 +1,16 @@
+// config
+$containerMaxWidth: 700px;
+
+$designContainerPx: 282;
+$designArtboardPx: 320;
+
+/**
+ * Container widths
+ */
+$containerSettings: (
+
+  uptomed: 100vw,
+  medtomax: (($designContainerPx/$designArtboardPx) * 100vw),
+  frommax: $containerMaxWidth,
+
+);

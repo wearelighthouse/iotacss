@@ -1,0 +1,25 @@
+/**
+ * .o-container
+ * Sample component
+ *
+ * Used:
+ * here, here and here.
+ */
+
+$object: 'container';
+
+#{'.' + $iota-global-objects-namespace + $object} {
+  // @extend .u-mh-auto;
+  width: var(--ContainerWidth);
+}
+
+:root {
+  --ContainerWidth: 100vw;
+
+    @each $breakpointName, $containerWidth in $containerSettings {
+
+      @include iota-breakpoint($breakpointName) {
+        --ContainerWidth: $containerWidth;
+      }
+    }
+}

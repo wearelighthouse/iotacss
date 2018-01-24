@@ -1,0 +1,112 @@
+/**
+ * Unitless Numbers
+ * - optional: Ranges of Numbers
+ * - optional: Steps within ranges.
+
+ * Classes
+ * - z-index
+ * - opacity
+ * - order
+ * - flex-grow
+ * - flex-shrink
+ * - font-weight
+ */
+
+ @mixin makeClass($selector, $property, $value) {
+  #{$selector} {
+    #{$property}: #{$value};
+  }
+ }
+
+$numberUtilitiesSettings: (
+  ( property: 'z-index',
+    propertyClass: 'z-',
+
+    ranges: (
+      (
+        start: -1,
+        end: 4,
+        responsive:
+          (
+            'smalltomed',
+          ),
+      ),
+    ),
+  ),
+  ( property: 'order',
+    propertyClass: 'order-',
+
+    ranges: (
+      (
+        start: -1,
+        end: 3,
+        responsive:
+          (
+            'smalltomed',
+          ),
+      ),
+    ),
+  ),
+  ( property: 'opacity',
+    propertyClass: 'opac-',
+
+    ranges: (
+      (
+        start: 0,
+        end: 1,
+        steps: .1,
+      ),
+    ),
+
+    values: (
+      (
+        value: .5,
+        valueClass: half,
+      ),
+    ),
+  ),
+  ( property: 'flex-grow',
+    propertyClass: 'grow-',
+
+    values: (
+      (
+        value: 0,
+        responsive:
+          (
+            'smalltomed', 'medtomax',
+          ),
+      ),
+      (
+        value: 1,
+      ),
+    ),
+  ),
+  ( property: 'flex-shrink',
+    propertyClass: 'shrink-',
+
+    values: (
+      (
+        value: 0,
+        responsive:
+          (
+            'smalltomed', 'medtomax',
+          ),
+      ),
+      (
+        value: 1,
+      ),
+    ),
+  ),
+  ( property: 'font-weight',
+    propertyClass: 'weight-',
+
+    values: (
+      (
+        value: 500,
+      ),
+      (
+        value: 700,
+      ),
+    ),
+  ),
+);
