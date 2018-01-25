@@ -50,10 +50,12 @@ $combinatorUtilitiesSettings: (
 
             values: (
               (
-                value: 1,
+                value: calc(var(--Gutter)),
+                valueClass: 1,
               ),
               (
-                value: 2,
+                value: calc(var(--Gutter) * 2),
+                valueClass: 2,
               ),
             ),
           ),

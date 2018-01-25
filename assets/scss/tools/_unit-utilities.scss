@@ -4,16 +4,12 @@
 
     $property: map-get($propertySetting, property);
 
-    @debug type_of($property);
-    $selector: #{'.' + $iota-global-utilities-namespace};
-
     $propertyClass: '';
     @if map-has-key($propertySetting, propertyClass) {
       $propertyClass: map-get($propertySetting, propertyClass);
-      $selector: $selector + $propertyClass;
     }
     @else {
-      $selector: $selector + $property;
+      $propertClass: $property;
     }
 
     @if map-has-key($propertySetting, units) {
@@ -42,8 +38,6 @@
             $valueClass: $value;
           }
 
-          $value: $value;
-
           @if (type_of($value) == number) {
             @if (unitless($value) == true) {
               $value: #{$value + $unit};
@@ -51,22 +45,20 @@
           }
 
           @if map-get($valueSetting, global) != false {
-            #{$selector + $valueClass + $unitClass} {
-              @each $propertySingle in $property {
-                #{$propertySingle}: #{$value};
-              }
-            }
+
+            $selector: #{'.' + $iota-global-utilities-namespace + $propertyClass + $valueClass + $unitClass};
+
+            @include makeClass($selector, $property, $value);
           }
 
           @if map-has-key($valueSetting, responsive) {
             @each $breakpointName in map-get($valueSetting, responsive) {
 
               @include iota-breakpoint($breakpointName) {
-                #{$selector + $valueClass + $unitClass + $iota-global-breakpoint-separator + $breakpointName} {
-                  @each $propertySingle in $property {
-                    #{$propertySingle}: #{$value};
-                  }
-                }
+
+                $selector: #{'.' + $iota-global-utilities-namespace + $propertyClass + $valueClass + $unitClass + $iota-global-breakpoint-separator + $breakpointName};
+
+                @include makeClass($selector, $property, $value);
               }
             }
           }
@@ -89,23 +81,19 @@
         }
 
         @if map-get($keywordSetting, global) != false {
-          #{$selector + $keywordClass} {
 
-            @each $propertySingle in $property {
-              #{$propertySingle}: #{$keyword};
-            }
-          }
+          $selector: #{'.' + $iota-global-utilities-namespace + $propertyClass + $keywordClass};
+
+          @include makeClass($selector, $property, $keyword);
         }
 
         @if map-has-key($keywordSetting, responsive) {
           @each $breakpointName in map-get($keywordSetting, responsive) {
 
             @include iota-breakpoint($breakpointName) {
-              #{$selector + $keywordClass + $iota-global-breakpoint-separator + $breakpointName} {
-                @each $propertySingle in $property {
-                  #{$propertySingle}: #{$keyword};
-                }
-              }
+              $selector: #{'.' + $iota-global-utilities-namespace + $propertyClass + $keywordClass + $iota-global-breakpoint-separator + $breakpointName};
+
+              @include makeClass($selector, $property, $keyword);
             }
           }
         }

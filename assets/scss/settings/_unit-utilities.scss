@@ -6,10 +6,6 @@
 
 */
 
-@function baseline($value) {
-  @return $value * 1.275rem;
-}
-
 $unitUtilitiesSettings: (
 
   ( property: 'top',
@@ -31,7 +27,7 @@ $unitUtilitiesSettings: (
 
         values: (
           (
-            value: baseline(1),
+            value: calc(1 * var(--Baseline)),
             valueClass: '1',
           ),
         ),
@@ -100,6 +96,8 @@ $unitUtilitiesSettings: (
     keywords: (
       (
         keyword: 'auto',
+
+        responsive: 'smalltomed',
       ),
     ),
   ),

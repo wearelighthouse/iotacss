@@ -266,11 +266,11 @@ a {
 }
 
 .u-hspace-1gutter > * + * {
-  margin-left: 1rem;
+  margin-left: calc(var(--Gutter));
 }
 
 .u-hspace-2gutter > * + * {
-  margin-left: 2rem;
+  margin-left: calc(var(--Gutter) * 2);
 }
 
 .u-top-0 {
@@ -278,7 +278,7 @@ a {
 }
 
 .u-top-1base {
-  top: 1.275rem;
+  top: calc(1 * var(--Baseline));
 }
 
 .u-top-2row {
@@ -324,6 +324,13 @@ a {
 .u-mh-auto {
   margin-right: auto;
   margin-left: auto;
+}
+
+@media screen and (min-width: 500px) and (max-width: 709px) {
+  .u-mh-auto\@smalltomed {
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 .u-pv-2rem {

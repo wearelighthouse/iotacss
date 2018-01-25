@@ -53,9 +53,9 @@
             $selector: #{'.' + $iota-global-utilities-namespace + $propertyClass + $valueClass + $unitClass} #{$combinator};
 
             @if map-get($valueSetting, global) != false {
-              #{$selector} {
-                #{$property}: #{$value};
-              }
+
+              @include makeClass($selector, $property, $value);
+
             }
 
             @if map-has-key($valueSetting, responsive) {
@@ -64,9 +64,9 @@
                 $selector: #{'.' + $iota-global-utilities-namespace + $propertyClass + $valueClass + $unitClass + $iota-global-breakpoint-separator + $breakpointName} #{$combinator};
 
                 @include iota-breakpoint($breakpointName) {
-                  #{$selector} {
-                    #{$property}: #{$value};
-                  }
+
+                  @include makeClass($selector, $property, $value);
+
                 }
               }
             }

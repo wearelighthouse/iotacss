@@ -22,17 +22,19 @@
       }
 
       @if map-get($valueSetting, global) != false {
-        #{'.' + $iota-global-utilities-namespace + $propertyClass + $valueClass} {
-          #{$property}: #{$value};
-        }
+
+        $selector: #{'.' + $iota-global-utilities-namespace + $propertyClass + $valueClass};
+
+        @include makeClass($selector, $property, $value);
       }
 
       @if map-has-key($valueSetting, responsive) {
         @each $breakpointName in map-get($valueSetting, responsive) {
           @include iota-breakpoint($breakpointName) {
-            #{'.' + $iota-global-utilities-namespace + $propertyClass + $valueClass + $iota-global-breakpoint-separator + $breakpointName} {
-              #{$property}: #{$value};
-            }
+
+            $selector: #{'.' + $iota-global-utilities-namespace + $propertyClass + $valueClass + $iota-global-breakpoint-separator + $breakpointName};
+
+            @include makeClass($selector, $property, $value);
           }
         }
       }

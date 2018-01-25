@@ -1,3 +1,4 @@
+/dist/
 node_modules
 .DS_Store
 .babelrc
@@ -7,3 +8,5 @@ gulpfile.js
 Makefile
 webpack.config.js
 package.json
+*.css
+*.map
