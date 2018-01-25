@@ -1,9 +1,8 @@
-@import 'tools/core';
 @import 'tools/breakpoint';
 @import 'tools/strings';
 @import 'tools/make-class';
-
 @import 'tools/grids';
+// @import 'tools/ms';
 @import 'tools/word-utilities';
 @import 'tools/combinator-utilities';
 @import 'tools/unit-utilities';
@@ -22,9 +21,6 @@
 @import 'settings/container';
 // @import 'settings/type';
 
-// @import 'tools/strip-unit';
-// @import 'tools/ms';
-
 @import 'base/initialize';
 
 @import 'utilities/word-utilities';
@@ -33,7 +29,6 @@
 @import 'utilities/number-utilities';
 
 @import 'objects/container';
-// @import 'objects/type';
-// @import 'objects/list';
+@import 'objects/type';
 
-// @import 'components/button';
+// @import 'components/put-them-here';

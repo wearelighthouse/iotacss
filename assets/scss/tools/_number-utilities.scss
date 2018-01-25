@@ -41,9 +41,17 @@
 
         $value: map-get($valueSetting, value);
 
+        $valueClass: '';
+        @if map-has-key($valueSetting, valueClass) {
+          $valueClass: map-get($valueSetting, valueClass);
+        }
+        @else {
+          $valueClass: $value;
+        }
+
         @if map-get($valueSetting, global) != false {
 
-          $selector: #{'.' + $iota-global-utilities-namespace + $propertyClass + $value};
+          $selector: #{'.' + $iota-global-utilities-namespace + $propertyClass + $valueClass};
           @include makeClass($selector, $property, $value);
         }
 
@@ -51,7 +59,7 @@
           @each $breakpointName in map-get($valueSetting, responsive) {
             @include iota-breakpoint($breakpointName) {
 
-              $selector: #{'.' + $iota-global-utilities-namespace + $propertyClass + $value + $iota-global-breakpoint-separator + $breakpointName};
+              $selector: #{'.' + $iota-global-utilities-namespace + $propertyClass + $valueClass + $iota-global-breakpoint-separator + $breakpointName};
 
               @include makeClass($selector, $property, $value);
             }

@@ -65,7 +65,7 @@
 
 */
 /**
- * Unitless Numbers
+ * Number Utilities
  * - optional: Ranges of Numbers
  * - optional: Steps within ranges.
 
@@ -77,106 +77,6 @@
  * - flex-shrink
  * - font-weight
  */
-/**
- * A modern, elegant and minimal combination of Normalize.css and
- * CSS Reset. Compatible with IE10+.
- */
-/**
- * 1. Sets box-sizing to border-box by default.
- * 2. Prevent adjustments of font size after orientation changes in
- *    IE on Windows Phone and in iOS.
- * 3. Makes font thinkness to look the same in Firefox and Webkit.
- */
-html {
-  box-sizing: border-box;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-font-smoothing: antialiased;
-  /* 3 */
-  -moz-osx-font-smoothing: grayscale;
-  /* 3 */
-}
-
-/**
- * Simple reset of element margin and padding
- */
-body,
-h1, h2, h3, h4, h5, h6,
-blockquote, p, pre, code,
-dl, dd, ol, ul,
-figure,
-hr,
-fieldset, legend {
-  margin: 0;
-  padding: 0;
-}
-
-/**
- * Sets box-sizing to all elements and before / after
- */
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-/**
- * Fixes the issues of main HTML5 tag with even earlier versions of IE.
- * For IE9-, please use HTML5Shiv https://github.com/aFarkas/html5shiv.
- */
-main {
-  display: block;
-}
-
-/**
- * Sets heading font-size to be equal to the content font-size. Encourages
- * the use of different heading elements to define the position of the heading
- * in the document and not the heading look.
-
- * Opinionated and disabled by default.
- */
-/**
- * Applies a bold font weight to strong instead of the default bolder
- */
-strong {
-  font-weight: bold;
-}
-
-/**
- * Removes default border spacing and collapse
- */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/**
- * 1. Removes border from images inside links
- * 2. Helps images to properly behave in responsive layouts
- */
-img {
-  border-style: none;
-  /* 1 */
-  max-width: 100%;
-  /* 2 */
-  height: auto;
-  /* 2 */
-  vertical-align: middle;
-  /* 2 */
-}
-
-/**
- * 1. Removes default grey background in IE10.
- * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
- */
-a {
-  background-color: transparent;
-  /* 1 */
-  -webkit-text-decoration-skip: objects;
-  /* 2 */
-}
-
 .u-pos-abs {
   position: absolute;
 }
@@ -325,14 +225,6 @@ a {
   top: 0;
 }
 
-.u-top-1base {
-  top: calc(1 * var(--Baseline));
-}
-
-.u-top-2row {
-  top: calc(2 * var(--Row));
-}
-
 .u-top-50pc {
   top: 50%;
 }
@@ -408,6 +300,18 @@ a {
   .u-2cspan\@smalltomed {
     width: calc(2 * var(--ColumnUnit) + ((1) * var(--GutterUnit)));
   }
+}
+
+.u-h1 {
+  font-size: 5rem;
+}
+
+.u-h2 {
+  font-size: 4rem;
+}
+
+.u-h3 {
+  font-size: 3.2rem;
 }
 
 .u-z--1 {
@@ -501,10 +405,6 @@ a {
 
 .u-opac-1 {
   opacity: 1;
-}
-
-.u-opac-0.5 {
-  opacity: 0.5;
 }
 
 .u-grow-0 {

@@ -22,28 +22,6 @@ $unitUtilitiesSettings: (
         ),
       ),
       (
-        unit: 'baseline',
-        unitClass: 'base',
-
-        values: (
-          (
-            value: calc(1 * var(--Baseline)),
-            valueClass: '1',
-          ),
-        ),
-      ),
-      (
-        unit: 'calcRows',
-        unitClass: 'row',
-
-        values: (
-          (
-            value: calc(2 * var(--Row)),
-            valueClass: '2',
-          ),
-        ),
-      ),
-      (
         unit: '%',
         unitClass: 'pc',
 
@@ -135,6 +113,31 @@ $unitUtilitiesSettings: (
             (
               'smalltomed',
             ),
+          ),
+        ),
+      ),
+    ),
+  ),
+  ( property: 'font-size',
+    propertyClass: '',
+
+    units: (
+      (
+        unit: 'rem',
+        unitClass: '',
+
+        values: (
+          (
+            value: 5,
+            valueClass: 'h1',
+          ),
+          (
+            value: 4,
+            valueClass: 'h2',
+          ),
+          (
+            value: 3.2,
+            valueClass: 'h3',
           ),
         ),
       ),

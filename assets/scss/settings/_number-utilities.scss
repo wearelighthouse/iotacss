@@ -1,5 +1,5 @@
 /**
- * Unitless Numbers
+ * Number Utilities
  * - optional: Ranges of Numbers
  * - optional: Steps within ranges.
 
@@ -49,13 +49,6 @@ $numberUtilitiesSettings: (
         start: 0,
         end: 1,
         steps: .1,
-      ),
-    ),
-
-    values: (
-      (
-        value: .5,
-        valueClass: half,
       ),
     ),
   ),
