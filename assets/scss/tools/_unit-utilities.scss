@@ -52,7 +52,9 @@
 
           @if map-get($valueSetting, global) != false {
             #{$selector + $valueClass + $unitClass} {
-              #{$property}: #{$value};
+              @each $propertySingle in $property {
+                #{$propertySingle}: #{$value};
+              }
             }
           }
 
@@ -61,7 +63,9 @@
 
               @include iota-breakpoint($breakpointName) {
                 #{$selector + $valueClass + $unitClass + $iota-global-breakpoint-separator + $breakpointName} {
-                  #{$property}: #{$value};
+                  @each $propertySingle in $property {
+                    #{$propertySingle}: #{$value};
+                  }
                 }
               }
             }
@@ -98,7 +102,9 @@
 
             @include iota-breakpoint($breakpointName) {
               #{$selector + $keywordClass + $iota-global-breakpoint-separator + $breakpointName} {
-                #{$property}: #{$keyword};
+                @each $propertySingle in $property {
+                  #{$propertySingle}: #{$keyword};
+                }
               }
             }
           }

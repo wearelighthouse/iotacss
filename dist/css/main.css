@@ -327,7 +327,22 @@ a {
 }
 
 .u-pv-2rem {
-  padding-top, padding-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media screen and (min-width: 500px) and (max-width: 709px) {
+  .u-pv-2rem\@smalltomed {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 710px) and (max-width: 1199px) {
+  .u-pv-2rem\@medtomax {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
 
 .u-z--1 {

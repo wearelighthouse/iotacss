@@ -12,12 +12,6 @@
  * - font-weight
  */
 
- @mixin makeClass($selector, $property, $value) {
-  #{$selector} {
-    #{$property}: #{$value};
-  }
- }
-
 $numberUtilitiesSettings: (
   ( property: 'z-index',
     propertyClass: 'z-',

@@ -113,6 +113,10 @@ $unitUtilitiesSettings: (
         values: (
           (
             value: 2,
+            responsive:
+            (
+              'smalltomed', 'medtomax',
+            ),
           ),
         ),
       ),
