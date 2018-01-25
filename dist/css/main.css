@@ -1,4 +1,46 @@
 /**
+ *
+ *  Columnspan
+ *  Number of columns, plus the gutters in-between.
+ *
+ *  width: columnspan(8);
+ *
+ */
+/**
+ *
+ *  Columns
+ *  Number of columns, no gutters.
+ *
+ *  right: columns(1);
+ *
+ */
+/**
+ *
+ *  Gutterspan
+ *  Number of gutters, plus the columns inbetween.
+ *
+ *  margin-left: gutterspan(4);
+ *
+ */
+/**
+ *
+ *  Gutters
+ *  Number of gutters, no columns.
+ *
+ *  padding-right: gutters(2);
+ *
+ */
+/**
+ *
+ *  Mix
+ *  Custom numbers for Columns and Gutters.
+ *  Use a single number to set both values as the same.
+ *
+ *  left: mix(5, 1);
+ *  right: mix(3);
+ *
+ */
+/**
  * Default global breakpoints map. These are the
  * default breakpoints map that will be shared across
  * all iotaCSS modules. You can change it also locally
@@ -6,6 +48,15 @@
  *
  * Type: Map
  */
+:root {
+  --ColumnCount: 12;
+  --ColumnDecimal: .07;
+  --GutterCount: calc(var(--ColumnCount) - 1);
+  --GutterDecimal: calc((1 - (var(--ColumnCount) * var(--ColumnDecimal))) / var(--GutterCount));
+  --ColumnUnit: calc(var(--ColumnDecimal) * var(--ContainerWidth));
+  --GutterUnit: calc(var(--GutterDecimal) * var(--ContainerWidth));
+}
+
 /*
 
 // top, right, bottom, left
@@ -25,9 +76,6 @@
  * - flex-grow
  * - flex-shrink
  * - font-weight
- */
-/**
- * Container widths
  */
 /**
  * A modern, elegant and minimal combination of Normalize.css and
@@ -321,7 +369,7 @@ a {
   }
 }
 
-.u-mh-auto {
+.u-mh-auto, .o-container {
   margin-right: auto;
   margin-left: auto;
 }
@@ -349,6 +397,16 @@ a {
   .u-pv-2rem\@medtomax {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+}
+
+.u-2cspan {
+  width: calc(2 * var(--ColumnUnit) + ((1) * var(--GutterUnit)));
+}
+
+@media screen and (min-width: 500px) and (max-width: 709px) {
+  .u-2cspan\@smalltomed {
+    width: calc(2 * var(--ColumnUnit) + ((1) * var(--GutterUnit)));
   }
 }
 
@@ -524,13 +582,13 @@ a {
 
 @media screen and (min-width: 710px) and (max-width: 1199px) {
   :root {
-    --ContainerWidth: 88.125vw;
+    --ContainerWidth: 90vw;
   }
 }
 
 @media screen and (min-width: 710px) {
   :root {
-    --ContainerWidth: 700px;
+    --ContainerWidth: 85vw;
   }
 }
 

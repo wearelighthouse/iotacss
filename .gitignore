@@ -10,3 +10,5 @@ webpack.config.js
 package.json
 *.css
 *.map
+dist/css/main.css.map
+dist/css/main.css

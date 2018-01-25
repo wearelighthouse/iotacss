@@ -9,17 +9,16 @@
 $object: 'container';
 
 #{'.' + $iota-global-objects-namespace + $object} {
-  // @extend .u-mh-auto;
+  @extend .u-mh-auto;
   width: var(--ContainerWidth);
 }
 
 :root {
   --ContainerWidth: 100vw;
 
-    @each $breakpointName, $containerWidth in $containerSettings {
-
-      @include iota-breakpoint($breakpointName) {
-        --ContainerWidth: $containerWidth;
-      }
+  @each $breakpointName, $containerWidth in $containerSettings {
+    @include iota-breakpoint($breakpointName) {
+      --ContainerWidth: $containerWidth;
     }
+  }
 }

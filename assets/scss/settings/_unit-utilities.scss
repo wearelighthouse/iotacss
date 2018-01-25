@@ -54,7 +54,6 @@ $unitUtilitiesSettings: (
           (
             value: 100,
             global: false,
-
             responsive:
             (
               'smalltomed', 'medtomax',
@@ -82,7 +81,6 @@ $unitUtilitiesSettings: (
     keywords: (
       (
         keyword: 'auto',
-
         responsive:
           (
             'smalltomed', 'medtomax',
@@ -96,7 +94,6 @@ $unitUtilitiesSettings: (
     keywords: (
       (
         keyword: 'auto',
-
         responsive: 'smalltomed',
       ),
     ),
@@ -111,9 +108,32 @@ $unitUtilitiesSettings: (
         values: (
           (
             value: 2,
+
             responsive:
             (
               'smalltomed', 'medtomax',
+            ),
+          ),
+        ),
+      ),
+    ),
+  ),
+  ( property: 'width',
+    propertyClass: '',
+
+    units: (
+      (
+        unit: 'cspan',
+        unitClass: 'cspan',
+
+        values: (
+          (
+            value: columnspan(2),
+            valueClass: '2',
+
+            responsive:
+            (
+              'smalltomed',
             ),
           ),
         ),
